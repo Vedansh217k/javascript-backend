@@ -1,0 +1,71 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+
+    <script>
+
+        const body = document.body;
+        body.innerHTML = ""; 
+
+        const container = document.createElement("div");
+        container.style.padding = "20px";
+        container.style.fontFamily = "Arial";
+        container.innerHTML =`
+            <h2>Calculator</h2>
+            <input id="num1" type="number" placeholder="first number"><br><br>
+            <input id="num2" type="number" placeholder="second number"><br><br>
+            
+            <select id="option">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select><br> 
+            <button onclick="calculate()">calculate</button>
+            <p id="result">Result:</p>
+        ` ;
+        body.appendChild(container);
+        window.calculate = function() {
+            const a = parseFloat(document.getElementById("num1").value);
+            const b = parseFloat(document.getElementById("num2").value);
+            const option = document.getElementById("option").value;
+            const resultElement = document.getElementById("result");
+            let result
+
+        if(isNaN(a) || isNaN(b)) {
+            result="invalid input";
+        } else{
+            switch(option){
+                case "+": result= a+b; break;
+                case "-": result = a-b; break;
+                case "*": result = a*b; break;
+                case "/": 
+                
+                 result= b ===0 ? "error:Divide by zero" : a/b ; 
+                 break;
+                
+                default : result = " invalid operator" ;   
+            }
+        }
+        resultElement.innerText = ` Result: ${a} ${option} ${b} = ${result}`;
+    }; 
+    </script>
+    
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="calculator-container"></div>
+    <script src="script.js"></script>
+</body>
+</html> -->

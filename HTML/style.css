@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#calculator-container {
+    padding: 20px;
+}
+
+input, select, button {
+    margin-bottom: 10px;
+    display: block;
+}
