@@ -14,6 +14,7 @@ function addtask(){
     const input = document.getElementById("tasksinput");
     const tasktext = input.value.trim();
     if( tasktext !==""){
+        
         const task = {
             
             id: tasks.length+1,
@@ -22,11 +23,14 @@ function addtask(){
         }
         tasks.push(task);
         console.log(tasks)
+        input.value = ""
+        show_task();
     }
+    
     else{
         alert("Please enter task")
     }
-    show_task();
+    
 }
 function show_task(){
    const list = document.getElementById("Tasks");
@@ -39,8 +43,39 @@ function show_task(){
         li.style.backgroundColor = getRandomColor();
         li.classList.add("libg");
 
+        const radio = document.createElement('input');
+        radio.type = "radio";
+        radio.name = "taskselector";
+        radio.value = task.id;
+
+        radio.addEventListener("change", ()=> {
+            console.log(`Selected task id: ${task.id}`);
+        })
+        
+        li.appendChild(radio);
+        
         list.appendChild(li);
     })
+    
         
 }    
+function searchTask(){
+    const keyword = document.getElementById("searchInput").value.trim();
+    const results = search(keyword)
+    const result_list = document.getElementById("Tasks") 
+    result_list.innerHTML = ""
 
+    results.forEach(task => {
+        const li = document.createElement("li");
+        li.textContent = `${task.task} (${task.status})`;
+        li.style.backgroundColor = getRandomColor();
+        li.classList.add("libg");
+        result_list.appendChild(li);
+    })
+    
+}
+function search(keyword){
+    return tasks.filter(task =>
+        task.task.toLowerCase().includes(keyword.toLowerCase())
+    );
+}

@@ -11,15 +11,20 @@
 </head>
 <body>
 
-    <div class="Heading">
+  <h1>ToDo List</h1>
 
-        <h1>ToDo List</h1>
-        <input type="text" id="tasksinput" placeholder="Write your task here...">
-        
-        <button id="add" onclick="addtask()">Add Tasks</button>
-        <ul id="Tasks" ></ul>
+  <div class="Heading">
+      <input type="text" id="tasksinput" placeholder="Write your task here..." />
+      <button id="add" onclick="addtask()">Add Tasks</button>
+      <input type="text" id="searchInput" placeholder="Search tasks..."/>
+      <button id="search" onclick="searchTask()">Search Tasks</button>
+
     </div>
-
     
+    <div class="search">
+    </div>
+    
+    <ul id="Tasks"></ul>
+
 </body>
 </html>
