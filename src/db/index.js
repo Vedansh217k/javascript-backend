@@ -18,9 +18,5 @@ const connectDB = async () => {
 
     }
 }
-console.log("==== DEBUG CONNECTION INFO ====");
-console.log("MONGODB_URI from .env: ", process.env.MONGODB_URI);
-console.log("DB_NAME from constants.js: ", DB_NAME);
-console.log(`FULL CONNECTION STRING: ${process.env.MONGODB_URI}/${DB_NAME}`);
-console.log("===============================");
+
 export default connectDB
